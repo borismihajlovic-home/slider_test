@@ -1,0 +1,17 @@
+// Variables
+$white: #fff;
+$grey: #808080;
+$black: #000;
+$beige: #f5f5dc;
+
+body{
+    background-color: $beige;
+    color: $grey;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+
+h1{
+    text-align: center;
+}

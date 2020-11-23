@@ -1,0 +1,14 @@
+body {
+  background-color: #f5f5dc;
+  color: #808080;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+h1 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=main.css.map */
