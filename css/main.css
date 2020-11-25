@@ -59,9 +59,6 @@ a:hover {
   left: var(--slide-list-width);
   animation-name: loop_reverse;
 }
-.slider-wrapper .slide-container:hover {
-  animation-duration: 45000ms;
-}
 
 @keyframes loop_reverse {
   0% {

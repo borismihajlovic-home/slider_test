@@ -66,9 +66,9 @@ $number-of-rows: var(--row-numbers);
             left: var(--slide-list-width); // css variable --slide-list-width
             animation-name: loop_reverse;
         }
-        &:hover{
-            animation-duration: 45000ms; // get from css variable --ms-hover
-        }
+        // &:hover{
+        //     animation-duration: 65000ms; // get from css variable --ms-hover
+        // }
 
     }
 

@@ -28,11 +28,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
         row.style.setProperty(`top`, `${topPosition}px`);
         // set custom class for every row
         row.classList.add(`${index+1}row`);
+
+        row.addEventListener('mouseover', (e)=>{
+            let parent = getClosest(e.target, 'slide-container');
+            console.log(parent)
+            // parent.style.removeProperty(`animation-duration`);
+            parent.style.setProperty(`animation-duration`, `50000ms`);
+        });
         
     });
     
     sliderWrapper.style.setProperty(`--slide-list-width`,`-2050px`);
     sliderWrapper.style.height = `${sliderWrapperHeight}px`;
+
+
 
 
 });
