@@ -2,7 +2,27 @@ console.log('main.js loaded... good to go');
 
 
 
+const cloneListFunction = (containersArray)=>{
+    const windowWidth = parseInt(window.innerWidth);
 
+    containersArray.forEach((container)=>{
+        console.log('clone as many list items as needed');
+    });
+    // let listWidth = parseInt(listEl.clientWidth),
+    //     cloneListEl = null,
+    //     counter = 1;
+    
+    // console.log(counter, listWidth);
+    // if (listWidth <= windowWidth) {
+    //     while (listWidth*2 <= windowWidth) {
+    //         counter++;
+    //         cloneListEl = listEl.cloneNode(true);
+    //         listContainerEl.appendChild(cloneListEl);
+    //         listWidth = listWidth * counter;
+    //         console.log(counter, listWidth);
+    //     }
+    // }
+}
 
 
 /** Sliding interval function 
@@ -19,6 +39,7 @@ const intervalFunction = (data)=>{
     let comparisonWidth=0;
     let shouldReset = null;
     let currentPosition = data.row.style.getPropertyValue(`transform`).split('(')[1];
+    // Direction specific setup
     if(data.direction=='left') { 
         move = data.row.getBoundingClientRect().x - data.moveStep;
         comparisonWidth -= data.slideListWidth;
@@ -34,13 +55,12 @@ const intervalFunction = (data)=>{
     }
 
     if(shouldReset){
-        console.log('reset');
         data.row.style.setProperty('transform', 'translateX(0px)');
         setTimeout(()=>{
             data.row.style.setProperty('transition-duration', '0ms');
             setTimeout(()=>{
                 data.row.style.setProperty('transition-duration', `${data.transitionDuration}ms`);
-            }, 10);
+            });
         });
         
     }else{
@@ -54,6 +74,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let sliderWrapperHeight = 0;
     const sliderWrapper = document.querySelector('.slider-wrapper');
     const allSlideContainers = sliderWrapper.querySelectorAll('.slide-container');
+
+    // Clone list
+    cloneListFunction(allSlideContainers);
     
     allSlideContainers.forEach((row, index)=>{
         let     containerHeight = row.querySelector('.slide').getBoundingClientRect().height,
@@ -71,6 +94,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     row: row,
                     transitionDuration: 10
                 };
+
         //set transition duration
         row.style.setProperty('transition-duration', '10ms');
         
@@ -135,7 +159,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
 
     });
-    
+
     sliderWrapper.style.setProperty(`--slide-list-width`,`-2050px`);
     sliderWrapper.style.height = `${sliderWrapperHeight}px`;
 
