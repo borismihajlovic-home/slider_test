@@ -13,6 +13,14 @@ body *::after {
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 .no-margin {
   margin: 0;
 }
@@ -23,14 +31,6 @@ body *::after {
 
 img {
   width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
 }
 
 /* Slider styling */
@@ -55,22 +55,7 @@ a:hover {
   display: flex;
   justify-content: flex-start;
 }
-@keyframes loop_reverse {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: var(--slide-list-width);
-  }
-}
-@keyframes loop {
-  0% {
-    left: var(--slide-list-width);
-  }
-  100% {
-    left: 0;
-  }
-}
+
 /* Slider styling end */
 h1 {
   text-align: center;
