@@ -8,14 +8,9 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
     <h1 class="uppercase">Custom slider modeled on Apple TV+ slider</h1>
-
-    <div style="margin-bottom: 3em;" class="marquee">
-        <p>1 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-        <p>2 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-      
-      </div>
 
 
     <!-- create div.slider-wrapper for every row -->
@@ -44,6 +39,9 @@
                     <div class="overlay"><button>click me</button></div>
                 </div>
             </div>
+        </div>
+
+        <div class="slide-container" data-time="30000" data-slide-direction="right">
             <div class="slide-list">
                 <!-- Actual slides have to contain .slide class -->
                 <div class="slide">
@@ -58,117 +56,10 @@
                     <span class="content">3</span>
                     <div class="overlay"><button>click me</button></div>
                 </div>
-                <div class="slide">
-                    <span class="content">4</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-                <div class="slide">
-                    <span class="content">5</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="slide-container" data-time="30000" data-slide-direction="right" id="quo">
-            <div class="slide-list">
-                <!-- Actual slides have to contain .slide class -->
-                <div class="slide">
-                    <span class="content">1</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-                <div class="slide">
-                    <span class="content">2</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-                <div class="slide">
-                    <span class="content">3</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-                <div class="slide">
-                    <span class="content">4</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-                <div class="slide">
-                    <span class="content">5</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-            </div>
-            <div class="slide-list">
-                <!-- Actual slides have to contain .slide class -->
-                <div class="slide">
-                    <span class="content">1</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-                <div class="slide">
-                    <span class="content">2</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-                <div class="slide">
-                    <span class="content">3</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-                <div class="slide">
-                    <span class="content">4</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
-                <div class="slide">
-                    <span class="content">5</span>
-                    <div class="overlay"><button>click me</button></div>
-                </div>
             </div>
         </div>
     </div>
-    <div style="margin-top: 4em;" class="slider-wrapper">
-        <div class="slide-container" data-time="35000" data-slide-direction="left">
-            <div class="slide-list">
-                <!-- Actual slides have to contain .slide class -->
-                <div class="slide"><span class="content">1</span></div>
-                <div class="slide"><span class="content">2</span></div>
-                <div class="slide"><span class="content">3</span></div>
-                <div class="slide"><span class="content">4</span></div>
-                <div class="slide"><span class="content">5</span></div>
-            </div>
-            <div class="slide-list">
-                <div class="slide"><span class="content">1</span></div>
-                <div class="slide"><span class="content">2</span></div>
-                <div class="slide"><span class="content">3</span></div>
-                <div class="slide"><span class="content">4</span></div>
-                <div class="slide"><span class="content">5</span></div>
-            </div>
-        </div>
-    </div>
-    <div class="slider-wrapper">
-        <div class="slide-container" data-time="35000" data-slide-direction="left">
-            <div class="slide-list">
-                <!-- Actual slides have to contain .slide class -->
-                <div class="slide"><span class="content">1</span></div>
-                <div class="slide"><span class="content">2</span></div>
-                <div class="slide"><span class="content">3</span></div>
-                <div class="slide"><span class="content">4</span></div>
-                <div class="slide"><span class="content">5</span></div>
-            </div>
-            <div class="slide-list">
-                <div class="slide"><span class="content">1</span></div>
-                <div class="slide"><span class="content">2</span></div>
-                <div class="slide"><span class="content">3</span></div>
-                <div class="slide"><span class="content">4</span></div>
-                <div class="slide"><span class="content">5</span></div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="marquee">
-        <div class="marquee--inner">
-          <span>
-            <div class="orb"></div><div class="orb red"></div><div class="orb yellow"></div><div class="orb blue"></div><div class="orb orange"></div><div class="orb purple"></div><div class="orb green"></div><div class="orb"></div>
-          </span>
-          <span>
-            <div class="orb"></div><div class="orb red"></div><div class="orb yellow"></div><div class="orb blue"></div><div class="orb orange"></div><div class="orb purple"></div><div class="orb green"></div><div class="orb"></div>
-          </span>
-      
-        </div>
-      </div>
+   
 
 
     <script src="./js/main.js"></script>
