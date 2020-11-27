@@ -1,15 +1,12 @@
 console.log('main.js loaded... good to go');
 
 
-/**
- * 
+/**Cloning Function
  * @param {array} containersArray 
  */
 const cloneListFunction = (containersArray)=>{
     const windowWidth = parseInt(window.innerWidth);
     containersArray.forEach((container)=>{
-        console.log('clone as many list items as needed');
-        console.log(container.querySelector('.slide-list').offsetWidth, windowWidth);
         const listEl = container.querySelector('.slide-list');
         let listWidth = listEl.offsetWidth,
             clonedEl = null;
@@ -18,20 +15,30 @@ const cloneListFunction = (containersArray)=>{
             clonedEl = listEl.cloneNode(true);
             container.appendChild(clonedEl);
             listWidth += listWidth;
-            console.log(listWidth);
         }
 
+    });
+};
+
+/**Positioning lists in a line
+ * @param {array} array 
+ * @param {number} listWidth 
+ * @param {string} direction 
+ */
+const settingListPosition = (array, listWidth, direction)=>{
+    array.forEach((element, i)=>{
+        element.style.setProperty(direction, `${listWidth*i}px`);
     });
 };
 
 
 /** Sliding interval function 
  *  @param { object } data - data needed for interval
- *  @param { number } data.slideListWidth 
- *  @param { string } data.direction
- *  @param { number } data.moveStep 
- *  @param { element } data.row
- *  @param { number } data.transitionDuration
+ *  @param { number } data.slideListWidth - width of one sllide list in px
+ *  @param { string } data.direction - direction of the slider
+ *  @param { number } data.moveStep - how much pixels does the slider need to move in regard of its width and time needed
+ *  @param { element } data.row - element containing all slide lists
+ *  @param { number } data.transitionDuration - time for transition in ms 
  */
 const intervalFunction = (data)=>{
     let move=0;
@@ -104,14 +111,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
         
         if(slideDirection=='left'){
             row.classList.add('left');
-            
             //set position
-            slideListArray[0].style.setProperty('left', '0px');
-            // slideListArray[1].style.setProperty('left', `${slideListWidth}px`);
-
+            settingListPosition(slideListArray, slideListWidth, 'left');
             // Set interval for right to left loop
             intervalId = setInterval(intervalFunction,intervalData.transitionDuration, intervalData);
 
+            // Mouse events
             row.addEventListener('mouseenter', (e)=>{
                 row.style.setProperty('transition-duration', '100ms');
                 // Reset the interval to a slower speed
@@ -119,7 +124,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 intervalData.transitionDuration = 100;
                 intervalId2 = setInterval(intervalFunction,intervalData.transitionDuration, intervalData);
             });
-
             row.addEventListener('mouseleave', ()=>{
                 // Clear slower interval
                 clearInterval(intervalId2);
@@ -130,13 +134,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
             });
 
         }else{
-            slideListArray[0].style.setProperty('right', `${slideListWidth}px`);
-            // slideListArray[1].style.setProperty('right', '0px');
-            row.classList.add('right');
-         
+            row.classList.add('right');       
+            //set position
+            settingListPosition(slideListArray, slideListWidth, 'right');
             // Set interval for right to left loop
             intervalId = setInterval(intervalFunction,intervalData.transitionDuration, intervalData);
 
+            // Mouse events
             row.addEventListener('mouseenter', (e)=>{
                 // Clear faster interval
                 clearInterval(intervalId);
@@ -145,7 +149,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 row.style.setProperty('transition-duration', `${intervalData.transitionDuration}ms`);
                 intervalId = setInterval(intervalFunction,intervalData.transitionDuration, intervalData);
             });
-
             row.addEventListener('mouseleave', (e)=>{
                 row.style.setProperty('transition-duration', '10ms');
                 // Clear slower interval
@@ -159,7 +162,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     });
 
-    sliderWrapper.style.setProperty(`--slide-list-width`,`-2050px`);
     sliderWrapper.style.height = `${sliderWrapperHeight}px`;
 
 });
