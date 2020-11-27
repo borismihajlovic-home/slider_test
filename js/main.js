@@ -1,38 +1,37 @@
 console.log('main.js loaded... good to go');
 
 
-
+/**
+ * 
+ * @param {array} containersArray 
+ */
 const cloneListFunction = (containersArray)=>{
     const windowWidth = parseInt(window.innerWidth);
-
     containersArray.forEach((container)=>{
         console.log('clone as many list items as needed');
+        console.log(container.querySelector('.slide-list').offsetWidth, windowWidth);
+        const listEl = container.querySelector('.slide-list');
+        let listWidth = listEl.offsetWidth,
+            clonedEl = null;
+
+        while (listWidth < windowWidth*2) {
+            clonedEl = listEl.cloneNode(true);
+            container.appendChild(clonedEl);
+            listWidth += listWidth;
+            console.log(listWidth);
+        }
+
     });
-    // let listWidth = parseInt(listEl.clientWidth),
-    //     cloneListEl = null,
-    //     counter = 1;
-    
-    // console.log(counter, listWidth);
-    // if (listWidth <= windowWidth) {
-    //     while (listWidth*2 <= windowWidth) {
-    //         counter++;
-    //         cloneListEl = listEl.cloneNode(true);
-    //         listContainerEl.appendChild(cloneListEl);
-    //         listWidth = listWidth * counter;
-    //         console.log(counter, listWidth);
-    //     }
-    // }
-}
+};
 
 
 /** Sliding interval function 
- *  @param {
- *      slideListWidth - number
- *      direction - string
- *      moveStep - number
- *      row - html wrapper element
- *      transitionDuration - number
- *  } data 
+ *  @param { object } data - data needed for interval
+ *  @param { number } data.slideListWidth 
+ *  @param { string } data.direction
+ *  @param { number } data.moveStep 
+ *  @param { element } data.row
+ *  @param { number } data.transitionDuration
  */
 const intervalFunction = (data)=>{
     let move=0;
@@ -108,7 +107,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             
             //set position
             slideListArray[0].style.setProperty('left', '0px');
-            slideListArray[1].style.setProperty('left', `${slideListWidth}px`);
+            // slideListArray[1].style.setProperty('left', `${slideListWidth}px`);
 
             // Set interval for right to left loop
             intervalId = setInterval(intervalFunction,intervalData.transitionDuration, intervalData);
@@ -132,7 +131,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         }else{
             slideListArray[0].style.setProperty('right', `${slideListWidth}px`);
-            slideListArray[1].style.setProperty('right', '0px');
+            // slideListArray[1].style.setProperty('right', '0px');
             row.classList.add('right');
          
             // Set interval for right to left loop
