@@ -5,7 +5,6 @@ $black: #000;
 $beige: #f5f5dc;
 
 
-
 // helper functions and some resets
 html, body{
     font-family: 'Roboto', sans-serif;
@@ -36,34 +35,6 @@ a{
 img{
     width: 100%;
 }
-
-
-/* Slider styling */
-
-.slider-wrapper{
-    margin: 1em 0;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.6s linear;
-    .slide-container{
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-        position: absolute;
-        will-change: transform;
-        transition-property: transform;
-        transition-timing-function: linear;
-        .slide-list{
-            position: absolute;
-            display: flex;
-            justify-content: flex-start;
-        }
-    }
-
-}
-
-/* Slider styling end */
 
 
 

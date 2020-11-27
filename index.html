@@ -6,6 +6,7 @@
     <title>Slider test</title>
 
     <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/scroller.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -13,11 +14,16 @@
     <h1 class="uppercase">Custom slider modeled on Apple TV+ slider</h1>
 
 
-    <!-- create div.slider-wrapper for every row -->
-    <div class="slider-wrapper" style="--slide-list-width: -2050px;">
+    <!-- main wrapper (div.slider-wrapper) -->
+    <div class="slider-wrapper">
+        <!-- slide container (div.slide-container) create for every set of slider items
+            must contain parameters:
+                data-time - number in ms
+                data-slide-direction - string (left or right)
+        -->
         <div class="slide-container" data-time="35000" data-slide-direction="left">
+            <!-- div that contain actual scrolling items -->
             <div class="slide-list">
-                <!-- Actual slides have to contain .slide class -->
                 <div class="slide">
                     <span class="content">1</span>
                     <div class="overlay"><button>click me</button></div>
@@ -58,10 +64,58 @@
                 </div>
             </div>
         </div>
+
+        <div class="slide-container" data-time="20000" data-slide-direction="right">
+            <div class="slide-list">
+                <!-- Actual slides have to contain .slide class -->
+                <div class="slide">
+                    <span class="content">1</span>
+                    <div class="overlay"><button>click me</button></div>
+                </div>
+                <div class="slide">
+                    <span class="content">2</span>
+                    <div class="overlay"><button>click me</button></div>
+                </div>
+                <div class="slide">
+                    <span class="content">3</span>
+                    <div class="overlay"><button>click me</button></div>
+                </div>
+                <div class="slide">
+                    <span class="content">4</span>
+                    <div class="overlay"><button>click me</button></div>
+                </div>
+                <div class="slide">
+                    <span class="content">5</span>
+                    <div class="overlay"><button>click me</button></div>
+                </div>
+                <div class="slide">
+                    <span class="content">6</span>
+                    <div class="overlay"><button>click me</button></div>
+                </div>
+                <div class="slide">
+                    <span class="content">7</span>
+                    <div class="overlay"><button>click me</button></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-container" data-time="45000" data-slide-direction="left">
+            <div class="slide-list">
+                <!-- Actual slides have to contain .slide class -->
+                <div class="slide">
+                    <span class="content">1</span>
+                    <div class="overlay"><button>click me</button></div>
+                </div>
+                <div class="slide">
+                    <span class="content">2</span>
+                    <div class="overlay"><button>click me</button></div>
+                </div>
+            </div>
+        </div>
     </div>
    
 
 
-    <script src="./js/main.js"></script>
+    <script src="./js/scroller.js"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+/* 
+** Slider styling 
+** Please don't change any styles here,
+** Do it in your custom style file
+*/
+.slider-wrapper {
+  margin: 1em 0;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.6s linear;
+}
+.slider-wrapper .slide-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  position: absolute;
+  will-change: transform;
+  transition-property: transform;
+  transition-timing-function: linear;
+}
+.slider-wrapper .slide-container .slide-list {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/*# sourceMappingURL=scroller.css.map */
