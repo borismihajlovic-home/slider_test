@@ -2,6 +2,7 @@
 
 ## Description
 This is a seemless repeating slider with slow down functionality on hover.
+And it's still work in progress.
 
 
 ## Important parts
