@@ -43,5 +43,5 @@ Short description on how to implement.
 
 You **must** provide these parameters to *.slider-container*:
 
- - *data-time* [number] - speed rotation (in milliseconds) of the slider
- - *data-direction* [srting] - direction that determines in which direction will the slider turn (string)  
+ - *data-time* [number] - speed rotation of the slider (in milliseconds)
+ - *data-direction* [srting] - direction that determines in which direction will the slider turn (left/right)  
