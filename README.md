@@ -1,4 +1,4 @@
-# Custom slider
+# Custom infinite carousel
 
 ## Description
 This is a seemless repeating slider with slow down functionality on hover.
